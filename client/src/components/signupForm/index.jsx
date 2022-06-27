@@ -28,6 +28,7 @@ const SignupForm = () => {
 
   const onSubmit = data => {
     console.log(data);
+    localStorage.setItem("user",  JSON.stringify(data))
     window.location.href = "/";
   };
 

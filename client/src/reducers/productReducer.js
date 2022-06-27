@@ -11,6 +11,7 @@ const initialState = {
   groupedCartData : {},
   isSnackBarVisible: false,
   isAddedToCartError: false,
+  isRemovedItem: false,
 }
 
 export const productReducer = createSlice({
@@ -37,6 +38,10 @@ export const productReducer = createSlice({
      targetArray = [...targetArray, targetArray[0]]
      state.groupedCartData = {...state.groupedCartData, [payload] : targetArray}
      state.cartItems += 1
+     state.isSnackBarVisible = true
+     state.isRemovedItem = false
+     localStorage.setItem("groupedCartData", JSON.stringify(state.groupedCartData))
+     localStorage.setItem("cartItems",state.cartItems)
     }, 
 
     // cart counter decreaser
@@ -45,19 +50,21 @@ export const productReducer = createSlice({
       targetArray.splice(targetArray.length-1, 1)
         state.groupedCartData = {...state.groupedCartData, [payload] : targetArray}
         state.cartItems -= 1
+        state.isSnackBarVisible = true
+        state.isRemovedItem = true
+        localStorage.setItem("groupedCartData", JSON.stringify(state.groupedCartData))
+        localStorage.setItem("cartItems",state.cartItems)   
     },
-
     toggleSnackBar: (state, action)=>{
       state.isSnackBarVisible = action.payload
     }
-
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(getProductsAction.fulfilled, (state, action) => {
       state.isProductLoading = false
       state.productData = action.payload
-    }).addCase(getProductsAction.pending, (state, action) => {
+    }).addCase(getProductsAction.pending, (state) => {
       state.isProductLoading = true
     })
 
@@ -71,11 +78,13 @@ export const productReducer = createSlice({
         r[a.id].push(a);
         return r;
     }, Object.create(null));
-
       // increase card count by one
       state.cartItems += 1
+      state.isRemovedItem = false
       state.isAddingToCart = false
       state.isAddedToCartError = false
+      localStorage.setItem("groupedCartData", JSON.stringify(state.groupedCartData))
+      localStorage.setItem("cartItems",state.cartItems)
     }).addCase(postAddtoCartAction.pending, (state, action) => {
       state.isAddingToCart = true
       state.isAddedToCartError = false

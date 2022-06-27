@@ -5,8 +5,23 @@ import "./styles.scss";
 import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import MuiButton from '../../common/muiButton';
+import {useState} from "react";
 
 const Header = ({id}) => {
+
+	const [user, setUser] = useState(()=>JSON.parse(localStorage.getItem("user"))
+	)
+
+	const onClickHandler = ()=>{
+		if(user){
+			setUser(null)
+			localStorage.setItem('user', JSON.stringify(""))
+		} else {
+			window.location.href = "/signin"
+		}
+	}
+
+
 	return (
 		<header id={id} className="header-wrapper">
 			<div className="header-container-one">
@@ -21,10 +36,7 @@ const Header = ({id}) => {
 
 			<div className="header-container-two">
 				<Cart />
-				<a href="/signin">
-					<MuiButton variant="outlined">Login</MuiButton>
-				</a>
-
+					<MuiButton onClick={onClickHandler}  aria-hidden="true" variant="outlined">{user ? 'Logout': 'Login'}</MuiButton>
 			</div>
 
 		</header>

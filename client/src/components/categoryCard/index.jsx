@@ -17,8 +17,8 @@ const CategoryCard = ({details, index}) => {
 					<Typography gutterBottom variant='p' fontWeight={theme.typography.fontWeightMedium} component="p" >
 						{details?.description}
 					</Typography>
-					<a href="/products">
-						<MuiButton variant="contained">
+					<a aria-label = {`Explore ${details?.name}`} href="/products">
+						<MuiButton aria-hidden="true" variant="contained">
 							<span>
 							Explore {details?.key}
 							</span>
@@ -26,7 +26,6 @@ const CategoryCard = ({details, index}) => {
 					</a>
 				</article>
 			</section>
-
 		</>
 	);
 };

@@ -36,13 +36,13 @@ const onCheckoutHandler = () => {
           </Typography>
           </div>
           <MuiButton onClick = {onCheckoutHandler} className = "button-container" variant="contained">
-            Buy now @ Rs.{price} 
+            Buy now @ &#8377;{price} 
           </MuiButton>
         </article>
       </article>
 
       <MuiButton onClick = {onCheckoutHandler} className = "button-container-one" variant="contained">
-        Buy now @ Rs.{price} 
+        Buy now @ &#8377;{price} 
       </MuiButton>
     </article>
    );

@@ -26,6 +26,7 @@ const SigninForm = () => {
 
   const onSubmit = data => {
     console.log(data);
+    localStorage.setItem("user",  JSON.stringify(data))
     window.location.href = "/"
   }
 
@@ -42,7 +43,7 @@ const SigninForm = () => {
           setError={setError}
           register={register}
           variant="standard"
-          type="email"
+          type="text"
         />
 
         <FormInput

@@ -2,7 +2,7 @@ import {Button} from "@mui/material";
 
 const MuiButton = ({children, ...props}) => {
 	return (
-		<Button {...props}>
+		<Button  {...props}>
 			{children}
 		</Button>
 	);

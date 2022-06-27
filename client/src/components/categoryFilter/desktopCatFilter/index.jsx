@@ -21,10 +21,10 @@ const DesktopCatFilter = () => {
 
   
   return ( 
-    <section className="desktopfilter-wrapper">
-      {categoryData.map(({name, id})=> <div key={id} className={`desktopfilter-container  ${id === categoryId ? `desktopfilter-container-active` : `` } `} >
-        < MuiButton onClick = {()=>onClickHandler(id)} color="secondary" variant="link" fullWidth  key={id} value={id}>{name}</MuiButton></div> )}
-    </section>
+    <div role="list" className="desktopfilter-wrapper">
+      {categoryData.map(({name, id})=> <div role="listitem" key={id} className={`desktopfilter-container  ${id === categoryId ? `desktopfilter-container-active` : `` } `} >
+        < MuiButton  onClick = {()=>onClickHandler(id)} color="secondary" variant="link" fullWidth  key={id} value={id}>{name}</MuiButton></div> )}
+    </div>
    );
 }
  

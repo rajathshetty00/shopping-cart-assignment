@@ -4,10 +4,10 @@ import "./styles.scss";
 
 const PlpLayout = () => {
 	return (
-	<section className="plplayout-wrapper" >
+	<div className="plplayout-wrapper" >
 	<CategoryFilter />
 	<ProductsList />
-	</section>
+	</div>
 	);
 };
 

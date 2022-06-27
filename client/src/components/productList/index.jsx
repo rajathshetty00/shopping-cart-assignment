@@ -13,7 +13,7 @@ import "./styles.scss";
 
 const ProductList = () => {
 	const dispatch = useDispatch();
-	const {productData, isSnackBarVisible} = useSelector((state) => state.product);
+	const {productData, isSnackBarVisible, isRemovedItem} = useSelector((state) => state.product);
 
 	useEffect(() => {
 		(async () => {
@@ -42,7 +42,7 @@ const ProductList = () => {
 			))}
 			<MuiSnackBar anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} timeout={1000} onClose={handleClose} showSnackBar = {isSnackBarVisible}>
 				<Alert  severity="success" sx={{width: '100%'}}>
-					Successfully Added to cart! 
+				{isRemovedItem ? 'Removed Item' : 'Successfully Added Item'} 
 				</Alert>
 			</MuiSnackBar>
 		</section>
