@@ -1,15 +1,17 @@
 {
-  "name": "code-exercise",
+  "name": "json-server-deploy",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "description": "Simple json database to deploy to the host of your choice",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 --headers 'Access-Control-Allow-Origin, *'  ./server"
+    "start": "node server.js"
   },
-  "author": "",
-  "license": "MIT",
+  "keywords": [
+    "json-server,heroku, node, REST API"
+  ],
+  "author": "Jesper Orb",
+  "license": "ISC",
   "dependencies": {
-    "canned": "^0.3.12"
+    "json-server": "^0.17.0"
   }
 }
