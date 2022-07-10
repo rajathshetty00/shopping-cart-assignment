@@ -115,6 +115,7 @@ export default function Cart() {
             :
             <section className='minicart-full-container' >
               {
+                // eslint-disable-next-line array-callback-return
                 Object.values(groupedCartData).map((item) => {
                   if (item?.length>0) {
                     return (

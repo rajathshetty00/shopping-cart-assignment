@@ -20,6 +20,7 @@ const ProductList = () => {
 			await dispatch(getCategoriesAction());
 			await dispatch(getProductsAction());
 		})();
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 
