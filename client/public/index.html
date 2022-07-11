@@ -50,126 +50,88 @@
         display: block;
         padding-top: 100%;
       }
-      .circular {
-        -webkit-animation: rotate 2s linear infinite;
-        animation: rotate 2s linear infinite;
-        height: 100%;
-        -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-        transform-origin: center center;
-        width: 100%;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
+
+      #dots #dot1 {
+        animation: load 1s infinite;
       }
-      .path {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
-        -webkit-animation: dash 1.5s ease-in-out infinite,
-          color 6s ease-in-out infinite;
-        animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-        stroke-linecap: round;
+
+      #dots #dot2 {
+        animation: load 1s infinite;
+        animation-delay: 0.2s;
+      }
+
+      #dots #dot3 {
+        animation: load 1s infinite;
+        animation-delay: 0.4s;
+      }
+
+      @keyframes load {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
       }
 
       /* Loader animation */
-
-      @-webkit-keyframes rotate {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes rotate {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-      @-webkit-keyframes dash {
-        0% {
-          stroke-dasharray: 1, 200;
-          stroke-dashoffset: 0;
-        }
-        50% {
-          stroke-dasharray: 89, 200;
-          stroke-dashoffset: -35;
-        }
-        100% {
-          stroke-dasharray: 89, 200;
-          stroke-dashoffset: -124;
-        }
-      }
-      @keyframes dash {
-        0% {
-          stroke-dasharray: 1, 200;
-          stroke-dashoffset: 0;
-        }
-        50% {
-          stroke-dasharray: 89, 200;
-          stroke-dashoffset: -35;
-        }
-        100% {
-          stroke-dasharray: 89, 200;
-          stroke-dashoffset: -124;
-        }
-      }
-      @-webkit-keyframes color {
-        100%,
-        0% {
-          stroke: #d62d20;
-        }
-        40% {
-          stroke: #0057e7;
-        }
-        66% {
-          stroke: #008744;
-        }
-        80%,
-        90% {
-          stroke: #ffa700;
-        }
-      }
-      @keyframes color {
-        100%,
-        0% {
-          stroke: #d62d20;
-        }
-        40% {
-          stroke: #0057e7;
-        }
-        66% {
-          stroke: #008744;
-        }
-        80%,
-        90% {
-          stroke: #ffa700;
-        }
-      }
-      
-      /* Loader animation */
-
     </style>
   </head>
   <body>
     <div id="root">
       <!-- html for offline tyling -->
       <div class="loader">
-        <svg class="circular" viewBox="25 25 50 50">
-          <circle
-            class="path"
-            cx="50"
-            cy="50"
-            r="20"
+        <svg
+          id="dots"
+          width="132px"
+          height="58px"
+          viewBox="0 0 132 58"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+        >
+          <!-- Generator: Sketch 3.5.1 (25234) - http://www.bohemiancoding.com/sketch -->
+          <title>dots</title>
+          <desc>Created with Sketch.</desc>
+          <defs></defs>
+          <g
+            id="Page-1"
+            stroke="none"
+            stroke-width="1"
             fill="none"
-            stroke-width="2"
-            stroke-miterlimit="10"
-          />
+            fill-rule="evenodd"
+            sketch:type="MSPage"
+          >
+            <g id="dots" sketch:type="MSArtboardGroup" fill="#A3A3A3">
+              <circle
+                id="dot1"
+                sketch:type="MSShapeGroup"
+                cx="25"
+                cy="30"
+                r="13"
+              ></circle>
+              <circle
+                id="dot2"
+                sketch:type="MSShapeGroup"
+                cx="65"
+                cy="30"
+                r="13"
+              ></circle>
+              <circle
+                id="dot3"
+                sketch:type="MSShapeGroup"
+                cx="105"
+                cy="30"
+                r="13"
+              ></circle>
+            </g>
+          </g>
         </svg>
       </div>
     </div>
-
-
-</body>
+  </body>
 </html>
