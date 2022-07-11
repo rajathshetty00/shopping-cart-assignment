@@ -20,7 +20,6 @@ export const homeReducer = createSlice({
       state.categoryId = action.payload
       state.categorySelected = state.categoryData.filter((item)=>item.key===action.payload)[0]
     },
-   
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
