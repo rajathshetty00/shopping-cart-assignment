@@ -37,7 +37,8 @@ Server and Client now have started in different ports. Client would be ideally r
 ## Demo
 Frontend and backend of the application is LIVE!
 
-This Application also can be installed like any android application. To use as an app add to homescreen from chrome once You receive the prompt.
+This application has PWA support. This Application can be installed like any android application. To use as a PWA add to homescreen from chrome once You receive the prompt.
+
 
 App can be viewed from [Here][here]
 
